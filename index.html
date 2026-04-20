@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Portfolio PPL - [Nama Anda]</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#2563eb', // Blue-600
+                        secondary: '#1e40af', // Blue-800
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for better look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-md shadow-sm z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold text-primary">E-Portfolio PPL</span>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#beranda" class="text-gray-600 hover:text-primary transition font-medium">Beranda</a>
+                    <a href="#observasi" class="text-gray-600 hover:text-primary transition font-medium">Observasi</a>
+                    <a href="#artefak" class="text-gray-600 hover:text-primary transition font-medium">Analisis Artefak</a>
+                    <a href="#dokumentasi" class="text-gray-600 hover:text-primary transition font-medium">Dokumentasi</a>
+                    <a href="#refleksi" class="text-gray-600 hover:text-primary transition font-medium">Refleksi</a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="flex items-center md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-primary focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#beranda" class="block px-3 py-2 text-gray-600 hover:bg-blue-50 hover:text-primary rounded-md">Beranda</a>
+                <a href="#observasi" class="block px-3 py-2 text-gray-600 hover:bg-blue-50 hover:text-primary rounded-md">Observasi</a>
+                <a href="#artefak" class="block px-3 py-2 text-gray-600 hover:bg-blue-50 hover:text-primary rounded-md">Analisis Artefak</a>
+                <a href="#dokumentasi" class="block px-3 py-2 text-gray-600 hover:bg-blue-50 hover:text-primary rounded-md">Dokumentasi</a>
+                <a href="#refleksi" class="block px-3 py-2 text-gray-600 hover:bg-blue-50 hover:text-primary rounded-md">Refleksi</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header / Beranda Section -->
+    <section id="beranda" class="pt-28 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto min-h-screen flex items-center">
+        <div class="flex flex-col md:flex-row items-center gap-12 w-full">
+            <!-- Foto Diri -->
+            <div class="w-48 h-48 md:w-72 md:h-72 shrink-0 rounded-full overflow-hidden border-4 border-white shadow-xl bg-gray-200">
+                <!-- UBAH BAGIAN INI: Ganti link src gambar dengan foto Anda (bisa link Google Drive atau path lokal) -->
+                <img src="https://ui-avatars.com/api/?name=Nama+Anda&background=0D8ABC&color=fff&size=512" alt="Foto Profil" class="w-full h-full object-cover">
+            </div>
+            
+            <!-- Profil Text -->
+            <div class="flex-1 text-center md:text-left">
+                <h1 class="text-3xl md:text-5xl font-bold text-gray-900 mb-4">Selamat Datang di Ruang Refleksi PPL Saya!</h1>
+                <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                    Perkenalkan, saya <strong class="text-primary">MALLARANGAN</strong>, mahasiswa program Pendidikan Profesi Guru di Universitas Negeri Makassar. E-Portfolio ini merupakan dokumentasi perjalanan, pengalaman, dan refleksi saya selama melaksanakan Praktik Pengalaman Lapangan (PPL) di SMK Negeri 3 Makassar.
+                </p>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 bg-white p-6 rounded-xl shadow-sm border border-gray-100 mb-8 text-left">
+                    <div><span class="text-gray-500 text-sm block">NIM</span> <span class="font-semibold">2590074950851</span></div>
+                    <div><span class="text-gray-500 text-sm block">Program Studi</span> <span class="font-semibold">Teknik Otomotif</span></div>
+                    <div><span class="text-gray-500 text-sm block">Guru Pamong</span> <span class="font-semibold">Imran Madjid,S.Pd.,M.Si.,M.Pd.</span></div>
+                    <div><span class="text-gray-500 text-sm block">Dosen Pembimbing</span> <span class="font-semibold">Ir.Wabdillah,S.Pd.,M.Pd.</span></div>
+                </div>
+
+                <div class="space-y-4 text-left">
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900 flex items-center gap-2"><i class="fas fa-eye text-primary"></i> Visi</h3>
+                        <p class="text-gray-600 mt-1">Menjadi pendidik yang inspiratif, adaptif, dan mampu menuntun peserta didik mencapai potensi terbaiknya sesuai dengan kodrat alam dan zamannya.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900 flex items-center gap-2"><i class="fas fa-bullseye text-primary"></i> Misi</h3>
+                        <ul class="list-disc list-inside text-gray-600 mt-1 space-y-1">
+                            <li>Menciptakan lingkungan belajar yang aman, nyaman, dan berpihak pada murid.</li>
+                            <li>Menerapkan pembelajaran yang inovatif dan berbasis teknologi.</li>
+                            <li>Terus belajar dan merefleksikan praktik pengajaran secara berkelanjutan.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Observasi Section -->
+    <section id="observasi" class="py-16 bg-white border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900">Laporan Observasi Sekolah</h2>
+                <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">Ringkasan hasil pengamatan dan orientasi ekosistem sekolah pada awal masa PPL.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100 hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-blue-100 text-primary rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Karakteristik Peserta Didik</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Peserta didik di kelas [Sebutkan Kelas, misal: X MIPA 1] secara umum memiliki semangat belajar yang [tinggi/cukup baik]. Mayoritas dari mereka menyukai gaya belajar [visual/kinestetik/auditori], yang terlihat dari antusiasme mereka saat guru menggunakan media pembelajaran berupa [video/permainan/diskusi kelompok]. Tantangan utama di kelas ini adalah [sebutkan tantangan].
+                    </p>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100 hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-blue-100 text-primary rounded-xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Lingkungan Belajar</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Secara fisik, ruang kelas [sangat memadai/cukup memadai] dengan sirkulasi udara yang baik dan pencahayaan yang cukup. Fasilitas pendukung seperti [proyektor/papan tulis/pojok baca] tersedia dan berfungsi dengan baik. Budaya sekolah sangat menekankan pada [sebutkan budaya sekolah, misal: kedisiplinan dan 5S].
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-10 text-center">
+                <a href="#" class="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-secondary transition shadow-lg shadow-blue-500/30">
+                    <i class="fas fa-download"></i> Unduh Laporan Observasi (PDF)
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Analisis Artefak (3 Siklus) Section -->
+    <section id="artefak" class="py-16 bg-gray-50 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900">Analisis Artefak Pembelajaran</h2>
+                <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">Analisis perangkat pembelajaran (Modul Ajar, Media, LKPD, dan Asesmen) yang telah dikembangkan dan diimplementasikan selama 3 siklus praktik mengajar.</p>
+            </div>
+
+            <div class="space-y-8">
+                <!-- Siklus 1 -->
+                <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm flex flex-col md:flex-row gap-8">
+                    <div class="md:w-1/3 shrink-0">
+                        <div class="inline-block px-3 py-1 bg-blue-100 text-primary rounded-full text-sm font-semibold mb-3">Siklus 1</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Topik: [Materi Siklus 1]</h3>
+                        <p class="text-gray-500 text-sm mb-5"><i class="far fa-calendar-alt"></i> [Tanggal Pelaksanaan Siklus 1]</p>
+                        
+                        <h4 class="text-sm font-semibold text-gray-700 mb-2">Tautan Artefak:</h4>
+                        <div class="flex flex-col gap-2">
+                            <a href="#" class="text-sm border border-gray-200 hover:bg-gray-50 text-gray-700 px-4 py-2 rounded-lg transition flex items-center gap-2">
+                                <i class="fas fa-file-pdf text-red-500"></i> Modul Ajar / RPP
+                            </a>
+                            <a href="#" class="text-sm border border-gray-200 hover:bg-gray-50 text-gray-700 px-4 py-2 rounded-lg transition flex items-center gap-2">
+                                <i class="fas fa-laptop-code text-blue-500"></i> Media Pembelajaran
+                            </a>
+                            <a href="#" class="text-sm border border-gray-200 hover:bg-gray-50 text-gray-700 px-4 py-2 rounded-lg transition flex items-center gap-2">
+                                <i class="fas fa-file-alt text-yellow-500"></i> LKPD & Asesmen
+                            </a>
+                        </div>
+                    </div>
+                    <div class="md:w-2/3 border-t md:border-t-0 md:border-l border-gray-100 pt-6 md:pt-0 md:pl-8">
+                        <h4 class="font-bold text-gray-900 mb-2 text-lg">Analisis Artefak</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4 text-justify">
+                            Pada siklus 1, Modul Ajar dirancang menggunakan model [Sebutkan Model, misal: Problem Based Learning]. Hasil analisis menunjukkan bahwa penyajian materi melalui media slide presentasi cukup menarik minat awal peserta didik. Namun, instrumen LKPD yang digunakan masih memiliki kelemahan berupa [sebutkan kelemahan, misal: instruksi pengerjaan yang kurang spesifik, sehingga memakan waktu lama saat diskusi kelompok]. Selain itu, rubrik asesmen formatif belum memuat indikator penilaian sikap yang terukur dengan jelas.
+                        </p>
+                        <h4 class="font-bold text-gray-900 mb-2 text-lg">Tindak Lanjut Perbaikan</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed text-justify">
+                            Berdasarkan temuan di siklus 1, tindak lanjut yang akan diterapkan pada siklus selanjutnya adalah [sebutkan perbaikan, misal: menyederhanakan bahasa instruksi pada LKPD, menyertakan panduan waktu untuk tiap tahap diskusi, dan melengkapi instrumen asesmen dengan rubrik observasi profil pelajar Pancasila secara spesifik].
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Siklus 2 -->
+                <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm flex flex-col md:flex-row gap-8">
+                    <div class="md:w-1/3 shrink-0">
+                        <div class="inline-block px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-semibold mb-3">Siklus 2</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Topik: [Materi Siklus 2]</h3>
+                        <p class="text-gray-500 text-sm mb-5"><i class="far fa-calendar-alt"></i> [Tanggal Pelaksanaan Siklus 2]</p>
+                        
+                        <h4 class="text-sm font-semibold text-gray-700 mb-2">Tautan Artefak:</h4>
+                        <div class="flex flex-col gap-2">
+                            <a href="#" class="text-sm border border-gray-200 hover:bg-gray-50 text-gray-700 px-4 py-2 rounded-lg transition flex items-center gap-2">
+                                <i class="fas fa-file-pdf text-red-500"></i> Modul Ajar / RPP
+                            </a>
+                            <a href="#" class="text-sm border border-gray-200 hover:bg-gray-50 text-gray-700 px-4 py-2 rounded-lg transition flex items-center gap-2">
+                                <i class="fas fa-gamepad text-purple-500"></i> Media Interaktif
+                            </a>
+                            <a href="#" class="text-sm border border-gray-200 hover:bg-gray-50 text-gray-700 px-4 py-2 rounded-lg transition flex items-center gap-2">
+                                <i class="fas fa-file-alt text-yellow-500"></i> LKPD & Asesmen
+                            </a>
+                        </div>
+                    </div>
+                    <div class="md:w-2/3 border-t md:border-t-0 md:border-l border-gray-100 pt-6 md:pt-0 md:pl-8">
+                        <h4 class="font-bold text-gray-900 mb-2 text-lg">Analisis Artefak</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4 text-justify">
+                            Sebagai perbaikan dari siklus sebelumnya, artefak pada siklus 2 mengalami peningkatan signifikan. Modul ajar disusun dengan menerapkan pendekatan *TaRL (Teaching at the Right Level)* dan dipadukan dengan media interaktif [Sebutkan Media, misal: Quizizz/Wordwall]. LKPD dirancang lebih terstruktur dengan langkah-langkah *scaffolding* yang jelas. Evaluasi menunjukkan bahwa engagement (keterlibatan) siswa meningkat drastis. Namun, asesmen diferensiasi produk di akhir materi [sebutkan kendala, misal: masih butuh penyesuaian kriteria agar adil untuk semua tingkat kemampuan siswa].
+                        </p>
+                        <h4 class="font-bold text-gray-900 mb-2 text-lg">Tindak Lanjut Perbaikan</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed text-justify">
+                            Tindak lanjut untuk siklus 3 difokuskan pada [sebutkan perbaikan, misal: pengembangan rubrik penilaian untuk produk yang berdiferensiasi (seperti poster, video, atau artikel) serta perbaikan manajemen kelas saat penggunaan media *smartphone*].
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Siklus 3 -->
+                <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm flex flex-col md:flex-row gap-8">
+                    <div class="md:w-1/3 shrink-0">
+                        <div class="inline-block px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-sm font-semibold mb-3">Siklus 3</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Topik: [Materi Siklus 3]</h3>
+                        <p class="text-gray-500 text-sm mb-5"><i class="far fa-calendar-alt"></i> [Tanggal Pelaksanaan Siklus 3]</p>
+                        
+                        <h4 class="text-sm font-semibold text-gray-700 mb-2">Tautan Artefak:</h4>
+                        <div class="flex flex-col gap-2">
+                            <a href="#" class="text-sm border border-gray-200 hover:bg-gray-50 text-gray-700 px-4 py-2 rounded-lg transition flex items-center gap-2">
+                                <i class="fas fa-file-pdf text-red-500"></i> Modul Ajar / RPP
+                            </a>
+                            <a href="#" class="text-sm border border-gray-200 hover:bg-gray-50 text-gray-700 px-4 py-2 rounded-lg transition flex items-center gap-2">
+                                <i class="fas fa-photo-video text-pink-500"></i> Media Diferensiasi
+                            </a>
+                            <a href="#" class="text-sm border border-gray-200 hover:bg-gray-50 text-gray-700 px-4 py-2 rounded-lg transition flex items-center gap-2">
+                                <i class="fas fa-clipboard-check text-green-500"></i> Instrumen Asesmen
+                            </a>
+                        </div>
+                    </div>
+                    <div class="md:w-2/3 border-t md:border-t-0 md:border-l border-gray-100 pt-6 md:pt-0 md:pl-8">
+                        <h4 class="font-bold text-gray-900 mb-2 text-lg">Analisis Artefak</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4 text-justify">
+                            Siklus 3 merupakan tahap optimalisasi perangkat pembelajaran. Modul Ajar telah mengimplementasikan pembelajaran berdiferensiasi (konten, proses, dan produk) secara menyeluruh. Analisis artefak menunjukkan LKPD sudah mampu mengakomodasi kecepatan belajar siswa yang berbeda-beda. Instrumen asesmen yang disusun telah mencakup tes tertulis berbasis HOTS (Higher Order Thinking Skills) dan rubrik unjuk kerja yang holistik. Praktik pembelajaran pada siklus ini berjalan sangat efektif dan indikator ketuntasan belajar berhasil terlampaui.
+                        </p>
+                        <h4 class="font-bold text-gray-900 mb-2 text-lg">Kesimpulan Praktik</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed text-justify">
+                            Melalui tiga siklus iterasi, artefak pembelajaran berevolusi menjadi lebih berpihak pada peserta didik. Hal ini membuktikan bahwa perancangan RPP/Modul ajar yang dinamis berdasarkan analisis empiris di kelas sangat berdampak pada kualitas proses dan hasil belajar siswa.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Dokumentasi Section -->
+    <section id="dokumentasi" class="py-16 bg-white border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900">Dokumentasi Pembelajaran</h2>
+                <p class="mt-4 text-lg text-gray-600">Rekaman visual aktivitas mengajar di kelas.</p>
+            </div>
+
+            <!-- Video Praktik -->
+            <div class="mb-12 max-w-4xl mx-auto">
+                <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2"><i class="fas fa-video text-red-500"></i> Video Praktik Mengajar</h3>
+                <div class="aspect-video bg-gray-200 rounded-xl overflow-hidden shadow-lg relative">
+                    <!-- UBAH BAGIAN INI: Ganti link src dengan link Embed YouTube Anda -->
+                    <!-- Contoh: <iframe src="https://www.youtube.com/embed/VIDEO_ID" class="w-full h-full" allowfullscreen></iframe> -->
+                    <div class="absolute inset-0 flex items-center justify-center text-gray-400 flex-col">
+                        <i class="fab fa-youtube text-5xl mb-2"></i>
+                        <p>Sematkan Video YouTube / Drive Di Sini</p>
+                    </div>
+                </div>
+                <p class="text-gray-600 mt-4 text-sm italic">*Deskripsi Video: Video berdurasi 5 menit ini menampilkan cuplikan saat saya sedang [membuka pelajaran / memandu diskusi kelompok] di kelas [Sebutkan Kelas].</p>
+            </div>
+
+            <!-- Galeri Foto -->
+            <div>
+                <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2"><i class="fas fa-images text-primary"></i> Galeri Kegiatan</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <!-- Foto 1 -->
+                    <div class="group relative rounded-xl overflow-hidden bg-gray-200 aspect-[4/3] shadow-sm">
+                        <!-- UBAH SRC GAMBAR -->
+                        <div class="absolute inset-0 flex items-center justify-center text-gray-400">Foto 1</div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
+                            <p class="text-white text-sm">Suasana saat siswa sedang berdiskusi kelompok memecahkan masalah.</p>
+                        </div>
+                    </div>
+                    <!-- Foto 2 -->
+                    <div class="group relative rounded-xl overflow-hidden bg-gray-200 aspect-[4/3] shadow-sm">
+                        <div class="absolute inset-0 flex items-center justify-center text-gray-400">Foto 2</div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
+                            <p class="text-white text-sm">Presentasi hasil kerja kelompok di depan kelas.</p>
+                        </div>
+                    </div>
+                    <!-- Foto 3 -->
+                    <div class="group relative rounded-xl overflow-hidden bg-gray-200 aspect-[4/3] shadow-sm">
+                        <div class="absolute inset-0 flex items-center justify-center text-gray-400">Foto 3</div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
+                            <p class="text-white text-sm">Pemberian reward kepada kelompok paling aktif.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Refleksi Section (4F) -->
+    <section id="refleksi" class="py-16 bg-gray-900 text-white border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold">Jurnal Refleksi Kritis (Model 4F)</h2>
+                <p class="mt-4 text-lg text-gray-400">Evaluasi dan perbaikan praktik pengajaran berkelanjutan.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Fact -->
+                <div class="bg-gray-800 p-6 rounded-xl border border-gray-700">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold text-xl">1</div>
+                        <h3 class="text-xl font-bold text-white">Fact (Peristiwa)</h3>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Pada hari [Tulis hari/tanggal], saya melaksanakan pembelajaran materi [Sebutkan Materi] di kelas [Sebutkan Kelas]. Pembelajaran berjalan sesuai dengan RPP, namun ada sedikit kendala ketika [sebutkan kendala faktual, misal: alokasi waktu presentasi kurang].
+                    </p>
+                </div>
+                
+                <!-- Feeling -->
+                <div class="bg-gray-800 p-6 rounded-xl border border-gray-700">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-full bg-pink-500/20 text-pink-400 flex items-center justify-center font-bold text-xl">2</div>
+                        <h3 class="text-xl font-bold text-white">Feeling (Perasaan)</h3>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Saat menghadapi kendala tersebut, awalnya saya merasa [sedikit panik]. Namun, melihat siswa sangat aktif berdiskusi, saya juga merasa [bangga/senang] karena tujuan pembelajaran yang *student-centered* berhasil terwujud.
+                    </p>
+                </div>
+
+                <!-- Finding -->
+                <div class="bg-gray-800 p-6 rounded-xl border border-gray-700">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-full bg-yellow-500/20 text-yellow-400 flex items-center justify-center font-bold text-xl">3</div>
+                        <h3 class="text-xl font-bold text-white">Finding (Pembelajaran)</h3>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Dari masukan Guru Pamong dan DPL, saya belajar bahwa [manajemen waktu] adalah keterampilan krusial. Guru harus bisa memberikan batas waktu yang tegas. Saya juga belajar pentingnya menyiapkan *plan B* jika teknologi bermasalah.
+                    </p>
+                </div>
+
+                <!-- Future -->
+                <div class="bg-gray-800 p-6 rounded-xl border border-gray-700">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center font-bold text-xl">4</div>
+                        <h3 class="text-xl font-bold text-white">Future (Penerapan)</h3>
+                    </div>
+                    <ul class="text-gray-300 text-sm leading-relaxed list-disc list-inside space-y-2">
+                        <li>Menggunakan *timer* yang ditampilkan di layar untuk mengatur durasi diskusi.</li>
+                        <li>Menyesuaikan kembali LKPD agar lebih ringkas dan fokus.</li>
+                        <li>Melatih intonasi dan volume suara agar lebih jelas ke seluruh sudut kelas.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-gray-400 text-sm">
+                &copy; <script>document.write(new Date().getFullYear())</script> - E-Portfolio disusun untuk memenuhi tugas UTS Mata Kuliah Praktik Pengalaman Lapangan (PPL).
+            </p>
+            <p class="text-gray-500 text-xs mt-2">Dibuat oleh [Nama Anda]</p>
+        </div>
+    </footer>
+
+    <!-- Script for Mobile Menu Toggle -->
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        const menuLinks = menu.querySelectorAll('a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
